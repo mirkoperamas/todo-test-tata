@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { TaskService } from "src/app/services/task.service";
-import { PreviewTask } from "./task-view-interface";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TaskService } from 'src/app/services/task.service';
+import { PreviewTask } from './task-view-interface';
 
 @Component({
-  selector: "app-tasks-view",
-  templateUrl: "./tasks-view.component.html",
-  styleUrls: ["./tasks-view.component.scss"],
+  selector: 'app-tasks-view',
+  templateUrl: './tasks-view.component.html',
+  styleUrls: ['./tasks-view.component.scss'],
 })
 export class TasksViewComponent implements OnInit {
   public initial: string;
@@ -17,13 +17,13 @@ export class TasksViewComponent implements OnInit {
     private tasksService: TaskService,
     private readonly router: Router
   ) {
-    this.initial = "";
+    this.initial = '';
     this.tasks = [];
   }
 
   public ngOnInit() {
     this.getAllTasks();
-    this.userLogged = localStorage.getItem("form");
+    this.userLogged = localStorage.getItem('form');
   }
 
   public saveTask() {
@@ -34,7 +34,7 @@ export class TasksViewComponent implements OnInit {
   }
 
   public delete(i: number) {
-    const confirmAlert = confirm("Delete?");
+    const confirmAlert = confirm('Delete?');
     if (!confirmAlert) {
       return;
     }
@@ -52,7 +52,7 @@ export class TasksViewComponent implements OnInit {
   }
 
   public closeSession() {
-    localStorage.removeItem("form");
-    this.router.navigate(["login"]);
+    localStorage.removeItem('form');
+    this.router.navigate(['login']);
   }
 }

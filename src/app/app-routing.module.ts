@@ -1,25 +1,25 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { LoggedGuard } from "./guards/logged";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LoggedGuard } from './guards/logged';
 
 const routes: Routes = [
   {
-    path: "login",
+    path: 'login',
     loadChildren: () =>
-      import("./pages/login/login.module").then((m) => m.LoginModule),
+      import('./pages/login/login.module').then((m) => m.LoginModule),
   },
   {
-    path: "task",
+    path: 'task',
     loadChildren: () =>
-      import("./pages/tasks-view/tasks-view.module").then(
+      import('./pages/tasks-view/tasks-view.module').then(
         (m) => m.TasksViewModule
       ),
     canActivate: [LoggedGuard],
   },
   {
-    path: "",
-    redirectTo: "login",
-    pathMatch: "full",
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
 ];
 

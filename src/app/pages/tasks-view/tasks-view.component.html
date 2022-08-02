@@ -13,21 +13,11 @@
 
       <div class="header">
         <div class="header__input">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Ingrese tarea nueva"
-            [(ngModel)]="initial"
-            id="tarea"
-            (keyup.enter)="saveTask()"
-          />
+          <input type="text" class="form-control" placeholder="Ingrese tarea nueva" [(ngModel)]="initial" id="tarea"
+            (keyup.enter)="saveTask()" />
         </div>
         <div class="header__button">
-          <button
-            [disabled]="!initial"
-            (click)="saveTask()"
-            class="btn btn-primary col"
-          >
+          <button [disabled]="!initial" (click)="saveTask()" class="btn btn-primary col">
             Guardar
           </button>
         </div>
@@ -35,22 +25,11 @@
 
       <div class="card">
         <div class="card-body">
-          <div
-            class="card-items py-3"
-            *ngFor="let task of tasks; let i = index"
-          >
-            <input
-              [(ngModel)]="task.taskStatus"
-              (change)="changeStatus()"
-              type="checkbox"
-            />
+          <div class="card-items py-3" *ngFor="let task of tasks; let i = index">
+            <input [(ngModel)]="task.taskStatus" (change)="changeStatus()" type="checkbox" />
             {{ task.taskName }}
             <span>
-              <button
-                class="btn btn-danger"
-                (click)="delete(i)"
-                *ngIf="!task.taskStatus || false"
-              >
+              <button class="btn btn-danger" (click)="delete(i)" *ngIf="!task.taskStatus || false">
                 x
               </button>
             </span>

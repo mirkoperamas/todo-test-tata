@@ -1,10 +1,10 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { TasksViewComponent } from "./tasks-view.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { TasksViewComponent } from './tasks-view.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: TasksViewComponent,
   },
 ];
